@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.4s;
+  z-index: 1000;
+}
+
+nav.scrolled {
+  background: #111;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #00c6ff;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background: #00c6ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.alt {
+  background: #f4f4f4;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* MOBILE */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 30px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links li {
+    margin: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
